@@ -1,6 +1,7 @@
 import { LoginForm } from "./auth/LoginForm.js"
 import { RegisterForm } from "./auth/RegisterForm.js"
 import { Nutshell } from "./Nutshell.js"
+import { getTask } from "./Task/DailyTaskProvider.js"
 
 
 /*
@@ -11,3 +12,6 @@ import { Nutshell } from "./Nutshell.js"
         ensure that the Nutshell component gets rendered
 */
 
+LoginForm()
+RegisterForm()
+getTask()
