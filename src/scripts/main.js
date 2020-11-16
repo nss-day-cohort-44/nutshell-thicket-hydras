@@ -1,6 +1,8 @@
 import { LoginForm } from "./auth/LoginForm.js"
 import { RegisterForm } from "./auth/RegisterForm.js"
 import { Nutshell } from "./Nutshell.js"
+import { TaskForm } from "./Task/DailyTaskForm.js"
+import { DailyTaskList } from "./Task/DailyTaskList.js"
 import { getTask } from "./Task/DailyTaskProvider.js"
 
 LoginForm()
@@ -14,7 +16,5 @@ Nutshell()
     4. Also, if the user authenticates, and the login form is initially shown
         ensure that the Nutshell component gets rendered
 */
+.then(() => DailyTaskList())
 
-LoginForm()
-RegisterForm()
-getTask()
