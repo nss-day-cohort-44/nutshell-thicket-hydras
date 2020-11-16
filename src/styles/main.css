@@ -1,0 +1,46 @@
+@import url("https://fonts.googleapis.com/css?family=Comfortaa|Patua+One");
+
+
+body,
+button,
+input,
+select,
+textarea {
+	background-color: lightseagreen;
+	color: #404040;
+	font-family: "Comfortaa", Arial, sans-serif;
+	font-size: 14px;
+    line-height: 1.5;
+
+}
+
+img{
+	border-radius: 25px;
+	animation: fadeIn ease 20s;
+	animation: fadeInAnimation ease 5s; 
+    animation-iteration-count: 1; 
+    animation-fill-mode: forwards; 
+}
+
+@keyframes fadeInAnimation { 
+    0% { 
+        opacity: 0; 
+    } 
+    100% { 
+        opacity: 1; 
+     } 
+}
+.auth{
+    display: flex;
+}
+.auth--login{
+    flex: 3;
+    flex-direction: column;
+}
+.auth--register{
+    flex: 3;
+    flex-direction: column;
+}
+.login, .register{
+    color: brown;
+}

@@ -25,6 +25,7 @@ eventHub.addEventListener("click", e => {
 const render = () => {
     contentTarget.innerHTML += `
         <section class="login">
+            <p>Welcome Back! please login below.</p>
             <input id="login__username" type="text" placeholder="Enter your username">
             <button id="login__button">Log In</button>
         </section>
