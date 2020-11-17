@@ -5,9 +5,13 @@ import { EventsList} from "./Events/EventsList.js"
 import { TaskForm } from "./Task/DailyTaskForm.js"
 import { DailyTaskList } from "./Task/DailyTaskList.js"
 import { getTask } from "./Task/DailyTaskProvider.js"
-
+//! equals not
+if (!sessionStorage.length){
 LoginForm()
 RegisterForm()
+}else{
+    Nutshell()
+}
 const eventHub = document.querySelector(".container")
 
 eventHub.addEventListener("userAuthenticated", () => Nutshell())

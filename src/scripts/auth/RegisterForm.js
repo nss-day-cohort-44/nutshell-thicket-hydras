@@ -30,16 +30,10 @@ eventHub.addEventListener("click", e => {
                     })
                         .then(response => response.json())
                         .then((newUser) => {
-                            sessionStorage.setItem("activeUser", newUser.id)
+                            sessionStorage.setItem(newUser.username, newUser.id)
 
                             eventHub.dispatchEvent(new CustomEvent("userAuthenticated"))
                         })
-                        if (sessionStorage.getItem === "activeUser", user.id) {
-                            Nutshell()
-                        } else {
-                            RegisterForm()
-                        }
-
                 }
                 else {
                     window.alert("Username already exists!  😭")
