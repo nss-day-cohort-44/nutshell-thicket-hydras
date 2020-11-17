@@ -1,5 +1,10 @@
-import {EventsList} from "./Events/EventsList.js"
+import { FriendForm } from "./Friends/FriendForm.js"
+import { EventsList } from "./Friends/FriendForm.js"
+
+
+
 export const Nutshell = () => {
-    return EventsList()
+    EventsList()
+    FriendForm()
     // Render all your UI components here
 }
