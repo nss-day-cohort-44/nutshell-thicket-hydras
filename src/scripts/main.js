@@ -5,8 +5,14 @@ import { EventsList} from "./Events/EventsList.js"
 import { TaskForm } from "./Task/DailyTaskForm.js"
 import { DailyTaskList } from "./Task/DailyTaskList.js"
 import { getTask } from "./Task/DailyTaskProvider.js"
+import { renderTaskButton } from "./Task/DisplayNewTaskButton.js"
+
+
+
+
 //! equals not
 if (!sessionStorage.length){
+
 LoginForm()
 RegisterForm()
 }else{
@@ -16,6 +22,13 @@ const eventHub = document.querySelector(".container")
 
 eventHub.addEventListener("userAuthenticated", () => Nutshell())
 
+
+
+// if (sessionStorage.getItem === "activeUser", user.id) {
+//     Nutshell()
+// } else {
+//     RegisterForm()
+// }
 /*
 if (sessionStorage.getItem === "activeUser", user.id) {
     Nutshell()
@@ -28,5 +41,4 @@ if (sessionStorage.getItem === "activeUser", user.id) {
 4. Also, if the user authenticates, and the login form is initially shown
 ensure that the Nutshell component gets rendered
 */
-
 

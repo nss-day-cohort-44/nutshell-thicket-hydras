@@ -45,7 +45,14 @@ img{
     color: brown;
 }
 
-.task {
+.tasks {
+    display: flex;
+    flex-direction: column;
+    border: 2px black dotted;
+}
+
+.dailyTaskContainer {
+    
     display: flex;
     flex-direction: column;
     border: 2px black dotted;

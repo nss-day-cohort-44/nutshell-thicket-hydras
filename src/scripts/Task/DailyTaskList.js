@@ -1,4 +1,5 @@
 import { DailyTaskHTML } from "./DailyTask.js";
+import { TaskForm } from "./DailyTaskForm.js";
 import { getTask, useTasks } from "./DailyTaskProvider.js";
 
 
@@ -8,6 +9,10 @@ const eventHub = document.querySelector(".container")
 eventHub.addEventListener("userAuthenticated", () => DailyTaskList())
 
 
+
+eventHub.addEventListener("taskButtonClicked", () => {
+    TaskForm()
+})
 // TaskList is getting new task and then all the task and then displaying the task
 // need to get button to display first
 
@@ -21,15 +26,34 @@ export const DailyTaskList = () => {
 
 const render = (taskArray) => {
     let taskHTML = ""
+    
 
     for(const task of taskArray) {
         taskHTML += DailyTaskHTML(task)
     }
 
 
-contentTarget.innerHTML = `
-<h3>Tasks</h3>
+contentTarget.innerHTML += `
+<p> Tasks </p>
 ${taskHTML}
+<button id="newTaskButton">New Task</button>
 `
 
 }
+
+// eventHub.addEventListener("deleteClick", clickEvent => {
+//     if (clickEvent.target.id.startsWith("deleteTask--")) {
+//         const [prefix, id] = clickEvent.target.id.split("--")
+
+    
+//        deleteTask(id).then(
+//            () => {
+//                const updatedTasks = useTasks()
+//                render(updatedTasks)
+//            }
+//        )
+//     }
+// })
+
+
+
