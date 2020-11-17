@@ -1,11 +1,7 @@
 const eventHub = document.querySelector(".container")
 // Getting the tasks from API
 
-const dispatchStateChangeEvent = () => {
-    const noteStateChangedEvent = new CustomEvent("noteStateChanged")
 
-    eventHub.dispatchEvent(noteStateChangedEvent)
-}
 
 
 let tasks = []
@@ -25,15 +21,16 @@ export const useTasks = () => {
     return tasks.slice()
 }
 
-export const saveTask = (task) => {
+export const saveTask = (tasks) => {
+
     return fetch('http://localhost:8088/tasks', {
         method: "POST",
         headers: {
             "Content-Type": "application/json"
         },
-        body: JSON.stringify(task)
+        body: JSON.stringify(tasks)
     })
     .then(getTask)
-    .then(dispatchStateChangeEvent)
+    
 }
 
