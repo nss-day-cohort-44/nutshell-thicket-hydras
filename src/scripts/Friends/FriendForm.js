@@ -1,11 +1,12 @@
 const contentTarget = document.querySelector(".friendsContainer")
+const eventHub = document.querySelector(".container")
 
 
 eventHub.addEventListener("userAuthenticated", () => FriendForm())
 
 export const FriendForm = () => {
     return  contentTarget.innerHTML =  `
-    <input id="dailyTask--taskName" type="text" placeholder="Your Task Here">
-    <textarea id="dailyTask--task" placeholder="Your Note Here"></textarea>
-    <button id="saveNote">Save Note</button>`
+    <input id="friendsList--friendName" type="text" placeholder="Search For Names">
+    
+    <button id="saveFriend">Add Friend</button>`
 }
