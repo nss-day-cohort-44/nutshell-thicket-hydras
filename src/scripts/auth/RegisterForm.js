@@ -1,3 +1,4 @@
+import {Nutshell} from "../Nutshell.js"
 const contentTarget = document.querySelector(".auth--register")
 const eventHub = document.querySelector(".container")
 
@@ -29,11 +30,10 @@ eventHub.addEventListener("click", e => {
                     })
                         .then(response => response.json())
                         .then((newUser) => {
-                            sessionStorage.setItem("activeUser", newUser.id)
+                            sessionStorage.setItem(newUser.username, newUser.id)
 
                             eventHub.dispatchEvent(new CustomEvent("userAuthenticated"))
                         })
-
                 }
                 else {
                     window.alert("Username already exists!  😭")
