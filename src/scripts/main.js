@@ -4,12 +4,21 @@ import { Nutshell } from "./Nutshell.js"
 import { TaskForm } from "./Task/DailyTaskForm.js"
 import { DailyTaskList } from "./Task/DailyTaskList.js"
 import { getTask } from "./Task/DailyTaskProvider.js"
-import {  renderTaskButton } from "./Task/DisplayNewTaskButton.js"
+import { renderTaskButton } from "./Task/DisplayNewTaskButton.js"
+
+
 
 LoginForm()
 RegisterForm()
 Nutshell()
 
+
+
+// if (sessionStorage.getItem === "activeUser", user.id) {
+//     Nutshell()
+// } else {
+//     RegisterForm()
+// }
 /*
 1. Check if the user is authenticated by looking in session storage for `activeUser`
 2. If so, render the Nutshell component

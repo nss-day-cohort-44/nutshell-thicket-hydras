@@ -26,18 +26,34 @@ export const DailyTaskList = () => {
 
 const render = (taskArray) => {
     let taskHTML = ""
-    console.log(taskArray)
+    
 
     for(const task of taskArray) {
-        taskHTML = DailyTaskHTML(task)
+        taskHTML += DailyTaskHTML(task)
     }
 
 
 contentTarget.innerHTML += `
-<h3>Tasks</h3>
-<button id="newTaskButton">New Task</button>
+<p> Tasks </p>
 ${taskHTML}
+<button id="newTaskButton">New Task</button>
 `
 
 }
+
+// eventHub.addEventListener("deleteClick", clickEvent => {
+//     if (clickEvent.target.id.startsWith("deleteTask--")) {
+//         const [prefix, id] = clickEvent.target.id.split("--")
+
+    
+//        deleteTask(id).then(
+//            () => {
+//                const updatedTasks = useTasks()
+//                render(updatedTasks)
+//            }
+//        )
+//     }
+// })
+
+
 

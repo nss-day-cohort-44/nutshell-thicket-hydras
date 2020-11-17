@@ -35,5 +35,6 @@ eventHub.addEventListener("click", clickEvent => {
 
         saveTask(taskToSave)
 }
+    
 }
 )

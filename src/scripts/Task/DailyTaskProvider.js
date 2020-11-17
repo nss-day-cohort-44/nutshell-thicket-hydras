@@ -34,3 +34,12 @@ export const saveTask = (tasks) => {
     
 }
 
+// export const deleteTask = tasksId => {
+//     return fetch(`http://localhost:8088/tasks/${tasksId}`, {
+//         method: "DELETE"
+//     })
+//         .then(getTask)
+// }
+
+
+
