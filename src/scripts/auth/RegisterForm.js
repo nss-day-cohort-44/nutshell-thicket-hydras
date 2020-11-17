@@ -1,3 +1,4 @@
+import {Nutshell} from "../Nutshell.js"
 const contentTarget = document.querySelector(".auth--register")
 const eventHub = document.querySelector(".container")
 
@@ -33,6 +34,11 @@ eventHub.addEventListener("click", e => {
 
                             eventHub.dispatchEvent(new CustomEvent("userAuthenticated"))
                         })
+                        if (sessionStorage.getItem === "activeUser", user.id) {
+                            Nutshell()
+                        } else {
+                            RegisterForm()
+                        }
 
                 }
                 else {

@@ -1,13 +1,16 @@
 import { LoginForm } from "./auth/LoginForm.js"
 import { RegisterForm } from "./auth/RegisterForm.js"
 import { Nutshell } from "./Nutshell.js"
+import { EventsList} from "./Events/EventsList.js"
 import { TaskForm } from "./Task/DailyTaskForm.js"
 import { DailyTaskList } from "./Task/DailyTaskList.js"
 import { getTask } from "./Task/DailyTaskProvider.js"
 
 LoginForm()
 RegisterForm()
-Nutshell()
+const eventHub = document.querySelector(".container")
+
+eventHub.addEventListener("userAuthenticated", () => Nutshell())
 
 /*
 1. Check if the user is authenticated by looking in session storage for `activeUser`
@@ -17,6 +20,4 @@ Nutshell()
 ensure that the Nutshell component gets rendered
 */
 
-
-.then(() => DailyTaskList())
 
