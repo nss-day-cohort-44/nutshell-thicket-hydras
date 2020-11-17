@@ -1,3 +1,4 @@
+import {Nutshell} from "../Nutshell.js"
 const contentTarget = document.querySelector(".auth--login")
 const eventHub = document.querySelector(".container")
 
@@ -14,7 +15,7 @@ eventHub.addEventListener("click", e => {
             .then(users => {
                 if (users.length > 0) {
                     const user = users[0]
-                    sessionStorage.setItem("activeUser", user.id)
+                    sessionStorage.setItem(user.username, user.id)
                     eventHub.dispatchEvent(new CustomEvent("userAuthenticated"))
                 }
             })

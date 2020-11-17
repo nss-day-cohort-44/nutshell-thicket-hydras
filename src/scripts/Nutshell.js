@@ -1,15 +1,8 @@
-import { FriendForm } from "./Friends/FriendForm.js"
-const eventHub = document.querySelector(".container")
-
-
-eventHub.addEventListener("userAuthenticated", () => Nutshell())
-
-console.log("activeUser" , activeUser)
+import { EventsList } from "./Events/EventsList.js"
 
 
 
 export const Nutshell = () => {
+    return EventsList()
     // Render all your UI components here
-    
-    return FriendForm()
 }
