@@ -25,11 +25,12 @@ eventHub.addEventListener("click", clickEvent => {
 
         const taskText = document.querySelector("#dailyTask--task").value
         const taskTitle = document.querySelector("#dailyTask--taskName").value
-        const dateOfCompletition = document.querySelector("#dailyTask--dateOfCompletition")
+        const dateOfCompletition = document.querySelector("#dailyTask--dateOfCompletition").value
 
     const taskToSave = {
         taskText,
-        taskTitle
+        taskTitle,
+        dateOfCompletition
     }
 
         saveTask(taskToSave)
