@@ -6,12 +6,7 @@ const eventHub = document.querySelector(".container")
 
 export const DailyTaskHTML = (taskObj) => {
     return `
-    <div class="task">
-    <input id="dailyTask--taskName" type="text" placeholder="Task Name">
-    <textarea id="dailyTask--task" placeholder="Your Task Here"></textarea>
-    <button id="save-task">Save Task</button>
-    <button id="tasks-button">Tasks</button>
-    </div>
+    
     `
 }
 

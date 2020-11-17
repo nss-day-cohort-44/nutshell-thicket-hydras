@@ -4,6 +4,7 @@ import { Nutshell } from "./Nutshell.js"
 import { TaskForm } from "./Task/DailyTaskForm.js"
 import { DailyTaskList } from "./Task/DailyTaskList.js"
 import { getTask } from "./Task/DailyTaskProvider.js"
+import {  renderTaskButton } from "./Task/DisplayNewTaskButton.js"
 
 LoginForm()
 RegisterForm()
@@ -19,4 +20,6 @@ ensure that the Nutshell component gets rendered
 
 
 .then(() => DailyTaskList())
+
+
 
