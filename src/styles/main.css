@@ -44,3 +44,9 @@ img{
 .login, .register{
     color: brown;
 }
+
+.task {
+    display: flex;
+    flex-direction: column;
+    border: 2px black dotted;
+}
