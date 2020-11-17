@@ -1,8 +1,9 @@
 import { LoginForm } from "./auth/LoginForm.js"
 import { RegisterForm } from "./auth/RegisterForm.js"
+import { FriendForm } from "./Friends/FriendForm.js"
 import { Nutshell } from "./Nutshell.js"
 import { TaskForm } from "./Task/DailyTaskForm.js"
-import { DailyTaskList } from "./Task/DailyTaskList.js"
+// import { DailyTaskList } from "./Task/DailyTaskList.js"
 import { getTask } from "./Task/DailyTaskProvider.js"
 
 LoginForm()
@@ -19,4 +20,5 @@ ensure that the Nutshell component gets rendered
 
 
 .then(() => DailyTaskList())
+
 
