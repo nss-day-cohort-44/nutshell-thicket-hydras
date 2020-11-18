@@ -1,18 +1,16 @@
 import { DailyTaskHTML } from "./DailyTask.js";
-import { TaskForm } from "./DailyTaskForm.js";
+
 import { deleteTask, getTask, useTasks } from "./DailyTaskProvider.js";
 
 
-const contentTarget = document.querySelector(".dailyTaskContainer")
+const contentTarget = document.querySelector(".tasksLists")
 const eventHub = document.querySelector(".container")
 
-eventHub.addEventListener("userAuthenticated", () => DailyTaskList())
+
+eventHub.addEventListener("taskStateChanged", () => DailyTaskList())
 
 eventHub.addEventListener("noteStateChanged", () => DailyTaskList())
 
-eventHub.addEventListener("taskButtonClicked", () => {
-    TaskForm()
-})
 // TaskList is getting new task and then all the task and then displaying the task
 // need to get button to display first
 
@@ -23,6 +21,24 @@ export const DailyTaskList = () => {
         render(allTask)
     })
 }
+eventHub.addEventListener("click", clickEvent => {
+    if (clickEvent.target.id.startsWith("deleteTask--")) {
+        const [prefix, id] = clickEvent.target.id.split("--")
+
+        /*
+            Invoke the function that performs the delete operation.
+
+            Once the operation is complete you should THEN invoke
+            useEvents() and render the Event list again.
+        */
+       deleteTask(id).then(
+           () => {
+               const updatedTasks = useTasks()
+               render(updatedTasks)
+           }
+       )
+    }
+})
 
 const render = (taskArray) => {
     let taskHTML = ""
@@ -33,10 +49,10 @@ const render = (taskArray) => {
     }
 
 
-contentTarget.innerHTML += `
-<p> Tasks </p>
+contentTarget.innerHTML = `
+<h3> Tasks </h3>
 ${taskHTML}
-<button id="newTaskButton">New Task</button>
+
 `
 
 }

@@ -2,7 +2,7 @@ import {EventForm} from "./EventsForm.js"
 const contentTarget = document.querySelector(".button__addEvent")
 const eventHub = document.querySelector(".container")
 
-export const renderWitnessButton = () => {
+export const renderAddEventsButton = () => {
     
     contentTarget.innerHTML = `
     <button id="addEvent">Add New Event</button>
