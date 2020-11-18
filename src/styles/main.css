@@ -58,6 +58,7 @@ img{
     border: 2px black dotted;
 }
 
+
 .taskObj {
     padding: 0%;
     display: flex;
@@ -68,5 +69,21 @@ img{
 .deleteTaskButton {
 
     width: 200px;
+
+
+.topLeftContainer{
+    display: flex;
+}
+.dailyTaskContainer{
+    flex: 2;
+}
+.eventsContainer{
+    flex: 2;
+}
+.friendsContainer{
+    flex: 1;
+}
+.chatContainer{
+    flex: 1;
 
 }
