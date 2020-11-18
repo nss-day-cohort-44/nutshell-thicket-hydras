@@ -64,5 +64,11 @@ img{
     flex: 2;
 }
 .eventsContainer{
-    flex: 3;
+    flex: 2;
+}
+.friendsContainer{
+    flex: 1;
+}
+.chatContainer{
+    flex: 1;
 }
