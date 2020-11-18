@@ -34,7 +34,7 @@ eventHub.addEventListener("click" , event => {
 
 eventHub.addEventListener("click" , event => { 
         if (event.target.id === "saveFriend") {
-        console.log("saveFriend", event.target.id)
+    
            addFriend()
         
         saveFriend(newFriend)}
