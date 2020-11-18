@@ -3,7 +3,7 @@ const eventHub = document.querySelector(".container")
 const dispatchStateChangeEvent = () => {
     const friendStateChangedEvent = new CustomEvent("friendStateChanged")
 
-    eventHub.dispatchEvent(noteStateChangedEvent)
+    eventHub.dispatchEvent(friendStateChangedEvent)
     
 }
 

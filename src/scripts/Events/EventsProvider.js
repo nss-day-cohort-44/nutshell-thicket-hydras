@@ -18,7 +18,7 @@ export const getEvents = () => {
     .then(response => response.json())
     .then (
         parsedEvents => {
-            console.log(parsedEvents)
+            // console.log(parsedEvents)
             events = parsedEvents
         })
 }
