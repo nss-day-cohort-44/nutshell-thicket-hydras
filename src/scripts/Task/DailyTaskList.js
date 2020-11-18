@@ -1,4 +1,5 @@
 import { DailyTaskHTML } from "./DailyTask.js";
+
 import { deleteTask, getTask, useTasks } from "./DailyTaskProvider.js";
 
 
@@ -8,7 +9,7 @@ const eventHub = document.querySelector(".container")
 
 eventHub.addEventListener("taskStateChanged", () => DailyTaskList())
 
-
+eventHub.addEventListener("noteStateChanged", () => DailyTaskList())
 
 // TaskList is getting new task and then all the task and then displaying the task
 // need to get button to display first
@@ -56,19 +57,25 @@ ${taskHTML}
 
 }
 
-// eventHub.addEventListener("deleteClick", clickEvent => {
-//     if (clickEvent.target.id.startsWith("deleteTask--")) {
-//         const [prefix, id] = clickEvent.target.id.split("--")
+
+// Deleting Task here
+
+eventHub.addEventListener("deleteClick", clickEvent => {
+    if (clickEvent.target.id.startsWith("deleteTask--")) {
+        console.log(clickEvent, "DELEEETTEEE")
+        const [prefix, id] = clickEvent.target.id.split("--")
 
     
-//        deleteTask(id).then(
-//            () => {
-//                const updatedTasks = useTasks()
-//                render(updatedTasks)
-//            }
-//        )
-//     }
-// })
+       deleteTask(id).then(
+           () => {
+               const updatedTasks = useTasks()
+               debugger
+               render(updatedTasks)
+               console.log(updatedTasks)
+           }
+       )
+    }
+})
 
 
 

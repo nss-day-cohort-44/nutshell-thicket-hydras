@@ -1,6 +1,5 @@
 // import { TaskForm } from "./DailyTaskForm.js"
 // import { DailyTaskList } from "./DailyTaskList.js"
-
 // this is a single representation of a note
 
 
@@ -19,14 +18,23 @@ export const DailyTaskHTML = (taskObj) => {
 // Actually on DOM
 
 
+
+
+
+
+
+
 // Working on checkbox here
+
+
+
 // eventHub.addEventListener("completeBoxChecked", e => {
-//     if(e.target.class === "completeBox") {
-//         const removeTask = document.getElementById(taskId);
-//         removeTask.parentNode.removeChild(removeTask)
+//     if(e.target.id === "checkBox") {
+//         console.log("BOX CLICKED", e)
+//     //     const removeTask = document.getElementById(taskId);
+//     //     removeTask.parentNode.removeChild(removeTask)
+//     // }
+//     // DailyTaskList()
+
 //     }
-//     console.log("BOX CLICKED")
 // })
-
-
-// DailyTaskList()

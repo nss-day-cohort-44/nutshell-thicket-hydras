@@ -6,8 +6,14 @@ const dispatchStateChangeEvent = () => {
 }
 
 
+    eventHub.dispatchEvent(taskStateChangedEvent)
+}
+
 
 let tasks = []
+
+
+// Getting all Tasks here 
 
 export const getTask = () => {
     return fetch('http://localhost:8088/tasks')
@@ -19,16 +25,19 @@ export const getTask = () => {
 
 }
 
+// slicing(copying) the tasks to be able to use them
 
 export const useTasks = () => {
     return tasks.slice()
 }
+
 export const deleteTask = taskId => {
     return fetch(`http://localhost:8088/tasks/${taskId}`, {
         method: "DELETE"
     })
         .then(getTask)
 }
+
 export const saveTask = (tasks) => {
 
     return fetch('http://localhost:8088/tasks', {
@@ -40,15 +49,18 @@ export const saveTask = (tasks) => {
     })
     .then(getTask)
     .then(dispatchStateChangeEvent)
+
     
 }
 
-// export const deleteTask = tasksId => {
-//     return fetch(`http://localhost:8088/tasks/${tasksId}`, {
-//         method: "DELETE"
-//     })
-//         .then(getTask)
-// }
+// hopefully deleting tasks
+
+export const deleteTask = tasksId => {
+    return fetch(`http://localhost:8088/tasks/${tasksId}`, {
+        method: "DELETE"
+    })
+        .then(getTask)
+}
 
 
 
