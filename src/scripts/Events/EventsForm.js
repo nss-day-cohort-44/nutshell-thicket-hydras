@@ -1,4 +1,3 @@
-import { renderWitnessButton } from "./DisplayNewEvents.js"
 import {saveEvent, useEvents} from "./EventsProvider.js"
 
 const contentTarget = document.querySelector(".button__addEvent")
