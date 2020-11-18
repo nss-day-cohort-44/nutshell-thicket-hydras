@@ -2,7 +2,10 @@ import { Event } from "./Events.js";
 import { getEvents, useEvents } from "./EventsProvider.js";
 
 
-const contentTarget = document.querySelector(".eventsContainer")
+const contentTarget = document.querySelector(".events")
+const eventHub = document.querySelector(".container")
+
+eventHub.addEventListener("eventStateChanged", () => EventsList())
 
 
 
