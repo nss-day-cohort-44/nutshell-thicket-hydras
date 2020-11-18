@@ -1,5 +1,5 @@
 import { Event } from "./Events.js";
-import { getEvents, useEvents } from "./EventsProvider.js";
+import { deleteEvent, getEvents, useEvents } from "./EventsProvider.js";
 
 
 const contentTarget = document.querySelector(".events")
@@ -9,7 +9,7 @@ eventHub.addEventListener("eventStateChanged", () => EventsList())
 
 
 
-// TaskList is getting new task and then all the task and then displaying the task
+// EventsList is getting new task and then all the events and then displaying the event
 // need to get button to display first
 
 export const EventsList = () => {
@@ -19,6 +19,24 @@ export const EventsList = () => {
         render(allEvents)
     })
 }
+eventHub.addEventListener("click", clickEvent => {
+    if (clickEvent.target.id.startsWith("deleteEvent--")) {
+        const [prefix, id] = clickEvent.target.id.split("--")
+
+        /*
+            Invoke the function that performs the delete operation.
+
+            Once the operation is complete you should THEN invoke
+            useEvents() and render the Event list again.
+        */
+       deleteEvent(id).then(
+           () => {
+               const updatedEvents = useEvents()
+               render(updatedEvents)
+           }
+       )
+    }
+})
 
 const render = (eventArray) => {
     let eventHTML = ""

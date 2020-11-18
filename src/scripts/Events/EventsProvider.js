@@ -22,6 +22,12 @@ export const getEvents = () => {
             events = parsedEvents
         })
 }
+export const deleteEvent = eventId => {
+    return fetch(`http://localhost:8088/events/${eventId}`, {
+        method: "DELETE"
+    })
+        .then(getEvents)
+}
 export const saveEvent = (events) => {
 
     return fetch('http://localhost:8088/events', {
