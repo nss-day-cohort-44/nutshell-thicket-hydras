@@ -1,38 +1,58 @@
+import { getUsers, useUsers } from "../UserProvider.js"
+import { saveFriend } from "./FriendsProvider.js"
+
 const contentTarget = document.querySelector(".friendsContainer")
 const eventHub = document.querySelector(".container")
 
 
 eventHub.addEventListener("userAuthenticated", () => AddFriendButton())
 
+// Renders on in Nutshell() when user logs into dashboard or registers
 export const AddFriendButton = () => {
     return  contentTarget.innerHTML =  `
     
     
-    <button id="saveFriend">Add a Friend</button>`
+    <button id="addFriend">Add a Friend</button>`
 }
 
+//When clicked to allow user to search for users and add them as friends. 
+
 export const FriendForm = () => {
-    contentTarget.innerHTML +=`<input id="friendsList--friendName" type="text" placeholder="Search For Names"></input>`}
+    contentTarget.innerHTML =`<button id="saveFriend">Add a Friend</button>
+    <input id="friendsList--friendName" type="text" placeholder="Search For Names"></input>`
+}
+
+
+//Adds other users to active user friend list  
 
 eventHub.addEventListener("click" , event => { 
+    if (event.target.id === "addFriend") {
+    FriendForm()
+        }
+        saveFriend(newFriend)
+    })
 
-    if (event.target.id === "saveFriend") {
-        FriendForm()
-    }
+let newFriend = ""
+console.log("userArray" , userArray)
 
- } 
- )
-
-
-
-
-
-// eventHub.addEventListener("click", event => {
-
-//     if (event.target.id === "witnessSelect") {
-        
-//         const customEvent = new CustomEvent("witnessClicked")
+eventHub.addEventListener("input" , e => {
+const addFriend = () => {
+    getUsers
+    .then(() => {
+        const userArray = useUsers()
     
-//         eventHub.dispatchEvent(customEvent)
-//     }
-// })
+        const newFriend = userArray.map(user => {
+            return user.userName === document.getElementById("friendsList--friendName").value
+        })
+        console.log("NEW FRIEND" , newFriend)
+        return newFriend
+
+    }
+    )
+}
+addFriend()
+
+
+
+
+

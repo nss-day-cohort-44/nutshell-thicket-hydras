@@ -6,6 +6,8 @@ import { TaskForm } from "./Task/DailyTaskForm.js"
 import { DailyTaskList } from "./Task/DailyTaskList.js"
 import { getTask } from "./Task/DailyTaskProvider.js"
 import { renderTaskButton } from "./Task/DisplayNewTaskButton.js"
+import { useUsers , getUsers } from "./UserProvider.js"
+
 
 
 
@@ -22,6 +24,8 @@ const eventHub = document.querySelector(".container")
 
 eventHub.addEventListener("userAuthenticated", () => Nutshell())
 
+getUsers()
+useUsers()
 
 
 // if (sessionStorage.getItem === "activeUser", user.id) {

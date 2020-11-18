@@ -9,5 +9,6 @@ export const getUsers = () => {
         parsedUsers => {
             console.log(parsedUsers)
             users = parsedUsers
+            console.log("users" , users)
         })
 }

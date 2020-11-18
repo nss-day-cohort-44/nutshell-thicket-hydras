@@ -1,5 +1,5 @@
 import { EventsList } from "./Events/EventsList.js"
-import { AddFriendButton, FriendForm } from "./Friends/FriendForm.js"
+import { AddFriendButton , FriendForm } from "./Friends/FriendForm.js"
 import { renderWitnessButton } from "./Events/DisplayNewEvents.js"
 
 
