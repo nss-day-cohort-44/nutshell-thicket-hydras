@@ -57,3 +57,12 @@ img{
     flex-direction: column;
     border: 2px black dotted;
 }
+.topLeftContainer{
+    display: flex;
+}
+.dailyTaskContainer{
+    flex: 2;
+}
+.eventsContainer{
+    flex: 3;
+}
