@@ -65,7 +65,7 @@ const addFriend = () => {
                 
             })
             
-            console.log("NEW FRIEND", newFriend.id)
+            console.log("NEW FRIEND", newFriend)
 
             
             
