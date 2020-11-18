@@ -1,6 +1,6 @@
 export const Event = (eventObj) => {
     return `
-    <div class="witness">
+    <div class="event">
         <p><b>${eventObj.nameOfEvent}</b></p>
         <p>${eventObj.dateOfEvent}</p>
         <p>${eventObj.locationOfEvent}</p>
