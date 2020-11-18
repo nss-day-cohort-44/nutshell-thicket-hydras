@@ -7,7 +7,7 @@ const eventHub = document.querySelector(".container")
 export const TaskForm = () => {
     const arrayOfTasks = useTasks()
     render(arrayOfTasks)
-    console.log(arrayOfTasks)
+    // console.log(arrayOfTasks)
 }
 
 const render = () => {

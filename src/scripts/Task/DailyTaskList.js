@@ -1,6 +1,6 @@
 import { DailyTaskHTML } from "./DailyTask.js";
 import { TaskForm } from "./DailyTaskForm.js";
-import { getTask, useTasks } from "./DailyTaskProvider.js";
+import { deleteTask, getTask, useTasks } from "./DailyTaskProvider.js";
 
 
 const contentTarget = document.querySelector(".dailyTaskContainer")
@@ -8,7 +8,7 @@ const eventHub = document.querySelector(".container")
 
 eventHub.addEventListener("userAuthenticated", () => DailyTaskList())
 
-
+eventHub.addEventListener("noteStateChanged", () => DailyTaskList())
 
 eventHub.addEventListener("taskButtonClicked", () => {
     TaskForm()
@@ -41,19 +41,25 @@ ${taskHTML}
 
 }
 
-// eventHub.addEventListener("deleteClick", clickEvent => {
-//     if (clickEvent.target.id.startsWith("deleteTask--")) {
-//         const [prefix, id] = clickEvent.target.id.split("--")
+
+// Deleting Task here
+
+eventHub.addEventListener("deleteClick", clickEvent => {
+    if (clickEvent.target.id.startsWith("deleteTask--")) {
+        console.log(clickEvent, "DELEEETTEEE")
+        const [prefix, id] = clickEvent.target.id.split("--")
 
     
-//        deleteTask(id).then(
-//            () => {
-//                const updatedTasks = useTasks()
-//                render(updatedTasks)
-//            }
-//        )
-//     }
-// })
+       deleteTask(id).then(
+           () => {
+               const updatedTasks = useTasks()
+               debugger
+               render(updatedTasks)
+               console.log(updatedTasks)
+           }
+       )
+    }
+})
 
 
 
