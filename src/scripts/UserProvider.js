@@ -7,8 +7,8 @@ export const getUsers = () => {
     .then(response => response.json())
     .then (
         parsedUsers => {
-            console.log(parsedUsers)
+            // console.log(parsedUsers)
             users = parsedUsers
-            console.log("users" , users)
+            // console.log("users" , users)
         })
 }
