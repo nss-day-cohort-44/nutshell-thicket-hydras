@@ -11,9 +11,9 @@ export const EventForm = () =>{
  const render = () => {
     contentTarget.innerHTML = `
     <div class="event">
-        <p>Event Name:</p><input id="event--name" type="text"/>
+        <p></p><input id="event--name" type="text" placeholder="Name of Event"/>
         <input id="event--date" type="date"/>
-        <p>Event's Location:</p><input id="event--location" type="text"/>
+        <p></p><input id="event--location" type="text"placeholder="Location of Event"/>
         <button id="saveEvent">Save Event</button>
     </div>
     `

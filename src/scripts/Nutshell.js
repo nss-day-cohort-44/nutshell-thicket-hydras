@@ -1,13 +1,18 @@
 import { EventsList } from "./Events/EventsList.js"
+import { renderAddEventsButton } from "./Events/AddEventButton.js"
 import { FriendForm } from "./Friends/FriendForm.js"
-import { renderWitnessButton } from "./Events/DisplayNewEvents.js"
+import { DailyTaskList } from "./Task/DailyTaskList.js"
+import { renderTaskButton } from "./Task/DisplayNewTaskButton.js"
+
 
 
 
 export const Nutshell = () => {
+    renderAddEventsButton()
     EventsList()
     FriendForm()
-    renderWitnessButton()
+    DailyTaskList()
+    renderTaskButton()
 
     // Render all your UI components here
 }

@@ -1,6 +1,9 @@
 const eventHub = document.querySelector(".container")
 // Getting the tasks from API
-
+const dispatchStateChangeEvent = () => {
+    const taskListStateChanged = new CustomEvent("taskStateChanged")
+    eventHub.dispatchEvent(taskListStateChanged)
+}
 
 
 
@@ -20,7 +23,12 @@ export const getTask = () => {
 export const useTasks = () => {
     return tasks.slice()
 }
-
+export const deleteTask = taskId => {
+    return fetch(`http://localhost:8088/tasks/${taskId}`, {
+        method: "DELETE"
+    })
+        .then(getTask)
+}
 export const saveTask = (tasks) => {
 
     return fetch('http://localhost:8088/tasks', {
@@ -31,6 +39,7 @@ export const saveTask = (tasks) => {
         body: JSON.stringify(tasks)
     })
     .then(getTask)
+    .then(dispatchStateChangeEvent)
     
 }
 
