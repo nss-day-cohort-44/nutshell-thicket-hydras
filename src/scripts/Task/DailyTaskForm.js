@@ -1,13 +1,12 @@
 import { saveTask, useTasks } from "./DailyTaskProvider.js"
 
-const contentTarget = document.querySelector(".dailyTaskContainer")
+const contentTarget = document.querySelector(".tasksForm")
 const eventHub = document.querySelector(".container")
 // calling array of task to render
 
 export const TaskForm = () => {
     const arrayOfTasks = useTasks()
     render(arrayOfTasks)
-    // console.log(arrayOfTasks)
 }
 
 const render = () => {
