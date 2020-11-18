@@ -1,6 +1,6 @@
 import {saveEvent, useEvents} from "./EventsProvider.js"
 
-const contentTarget = document.querySelector(".button__addEvent")
+const contentTarget = document.querySelector(".eventForm")
 const eventHub = document.querySelector(".container")
 
 
