@@ -34,13 +34,17 @@ eventHub.addEventListener("click" , event => {
 
 eventHub.addEventListener("click" , event => { 
         if (event.target.id === "saveFriend") {
-    
-           addFriend()
+
+            const activeUser = sessionStorage.getItem("activeUser")
+            console.log("This is active user ", activeUser)
+
+           const catchFriendObj = addFriend()
+           console.log(catchFriendObj)
         
-        saveFriend(newFriend)}
-        })
-
-
+        saveFriend(catchFriendObj)}
+    })
+        
+        
 
 
 
@@ -56,12 +60,15 @@ const addFriend = () => {
     
         
     const userArray = useUsers()
-        console.log("USERARRAY" , userArray)
+        // console.log("USERARRAY" , userArray)
         const newFriend = userArray.find(user => {
-            return user.username === document.getElementById("friendsList--friendName").value
-        })
-        console.log("NEW FRIEND" , newFriend)
-        return newFriend
+           return user.username === document.getElementById("friendsList--friendName").value
+            
+            
+        }) 
+
+        console.log("NEW FRIEND" , newFriend.id)
+        return newFriend.id
 
 
       }) }  

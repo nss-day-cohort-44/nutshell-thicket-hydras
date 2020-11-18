@@ -6,8 +6,6 @@ const dispatchStateChangeEvent = () => {
 }
 
 
-    eventHub.dispatchEvent(taskStateChangedEvent)
-}
 
 
 let tasks = []
@@ -55,12 +53,6 @@ export const saveTask = (tasks) => {
 
 // hopefully deleting tasks
 
-export const deleteTask = tasksId => {
-    return fetch(`http://localhost:8088/tasks/${tasksId}`, {
-        method: "DELETE"
-    })
-        .then(getTask)
-}
 
 
 
