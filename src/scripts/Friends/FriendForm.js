@@ -18,41 +18,53 @@ export const AddFriendButton = () => {
 //When clicked to allow user to search for users and add them as friends. 
 
 export const FriendForm = () => {
-    contentTarget.innerHTML =`<button id="saveFriend">Add a Friend</button>
+    contentTarget.innerHTML =`<button id="saveFriend">Save Friend</button>
     <input id="friendsList--friendName" type="text" placeholder="Search For Names"></input>`
 }
 
 
-//Adds other users to active user friend list  
+// Adds other users to active user friend list  
 
 eventHub.addEventListener("click" , event => { 
     if (event.target.id === "addFriend") {
     FriendForm()
         }
-        saveFriend(newFriend)
-    })
+    }
+    )
+
+eventHub.addEventListener("click" , event => { 
+        if (event.target.id === "saveFriend") {
+        console.log("saveFriend", event.target.id)
+           addFriend()
+        
+        saveFriend(newFriend)}
+        })
+
+
+
+
+
 
 let newFriend = ""
-console.log("userArray" , userArray)
+// console.log("userArray" , userArray)
 
-eventHub.addEventListener("input" , e => {
+
+
 const addFriend = () => {
-    getUsers
+    getUsers()
     .then(() => {
-        const userArray = useUsers()
     
-        const newFriend = userArray.map(user => {
-            return user.userName === document.getElementById("friendsList--friendName").value
+        
+    const userArray = useUsers()
+        console.log("USERARRAY" , userArray)
+        const newFriend = userArray.find(user => {
+            return user.username === document.getElementById("friendsList--friendName").value
         })
         console.log("NEW FRIEND" , newFriend)
         return newFriend
 
-    }
-    )
-}
-addFriend()
+
+      }) }  
 
 
-
-
-
+// addFriend()
