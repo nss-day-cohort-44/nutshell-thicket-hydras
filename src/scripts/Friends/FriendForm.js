@@ -1,7 +1,7 @@
 import { getUsers, useUsers } from "../UserProvider.js"
 import { saveFriend } from "./FriendsProvider.js"
 
-const contentTarget = document.querySelector(".friendsContainer")
+const contentTarget = document.querySelector(".button__addFriend")
 const eventHub = document.querySelector(".container")
 
 
@@ -14,8 +14,7 @@ export const AddFriendButton = () => {
     
     <button id="addFriend">Add a Friend</button>`
 }
-
-//When clicked to allow user to search for users and add them as friends. 
+// render form for add friend that's invoked on below click event
 
 export const FriendForm = () => {
     contentTarget.innerHTML = `<button id="saveFriend">Save Friend</button>
@@ -23,7 +22,7 @@ export const FriendForm = () => {
 }
 
 
-// Adds other users to active user friend list  
+//When clicked to allow enter usernames and add them as friends. 
 
 eventHub.addEventListener("click", event => {
     if (event.target.id === "addFriend") {
@@ -31,6 +30,7 @@ eventHub.addEventListener("click", event => {
     }
 }
 )
+// Adds other users to active user friend list  
 
 eventHub.addEventListener("click", event => {
     if (event.target.id === "saveFriend") {

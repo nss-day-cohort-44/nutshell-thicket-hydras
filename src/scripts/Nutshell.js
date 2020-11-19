@@ -1,5 +1,6 @@
 import { EventsList } from "./Events/EventsList.js"
 import { AddFriendButton } from "./Friends/FriendForm.js"
+import { FriendList } from "./Friends/FriendsList.js"
 
 import { renderAddEventsButton } from "./Events/AddEventButton.js"
 
@@ -20,7 +21,7 @@ export const Nutshell = () => {
 
     DailyTaskList()
 
-    
+    FriendList()
     
     
     DailyTaskList()

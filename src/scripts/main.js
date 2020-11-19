@@ -28,7 +28,7 @@ eventHub.addEventListener("userAuthenticated", () => Nutshell())
 
 getUsers()
 useUsers()
-FriendList()
+
 
 // if (sessionStorage.getItem === "activeUser", user.id) {
 //     Nutshell()
