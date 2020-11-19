@@ -13,15 +13,20 @@ let tasks = []
 
 // Getting all Tasks here 
 
-export const getTask = userId => {
-    return fetch('http://localhost:8088/tasks?tasksId=${userId}')
+export const getTask = (userId) => {
+    return fetch(`http://localhost:8088/tasks?tasksId=${userId}`)
     .then(response => response.json())
     .then(parsedTasks => {
-        tasks = parsedTasks
-        // console.log(tasks)
+        tasks = parsedTasks.filter(ut => {
+        
+            return ut.activeUser === parseInt(sessionStorage.getItem("activeUser"))
+        })
     })
 
 }
+
+
+
 
 // slicing(copying) the tasks to be able to use them
 
@@ -36,7 +41,7 @@ export const deleteTask = taskId => {
         .then(getTask)
 }
 
-export const saveTask = () => {
+export const saveTask = (tasks) => {
 
     return fetch('http://localhost:8088/tasks', {
         method: "POST",

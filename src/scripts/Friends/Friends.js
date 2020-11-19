@@ -4,10 +4,12 @@ export const FriendHTML = (newFriend) => {
     return `
 
         <div class="friendsHTML">
+
         <div class="friendName"> ${newFriend.username}</div>
         <button id="deleteFriend--${newFriend.id}">Delete</button>
         
         
     `
     
+
 }

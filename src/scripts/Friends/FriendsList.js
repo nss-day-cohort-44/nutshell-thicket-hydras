@@ -10,7 +10,9 @@ const eventHub = document.querySelector(".container")
 
 eventHub.addEventListener("friendStateChanged", () => FriendList())
 
+
 const activeUser = parseInt(sessionStorage.getItem("activeUser"))
+
 
 
 

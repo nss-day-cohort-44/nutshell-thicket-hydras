@@ -26,13 +26,14 @@ eventHub.addEventListener("click", clickEvent =>{
         const dateOfArticle = document.querySelector("#article--dateEntered").value
         const urlOfArticle = document.querySelector("#article--url").value
         const descriptionOfArticle = document.querySelector("#article--description").value
-
+        const activeUser = parseInt(sessionStorage.getItem("activeUser"))
         const newArticle = {
             titleOfArticle,
             timestamp,
             dateOfArticle,
             urlOfArticle,
-            descriptionOfArticle
+            descriptionOfArticle,
+            activeUser
 
         }
         saveArticle(newArticle)

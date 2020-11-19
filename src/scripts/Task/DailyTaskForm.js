@@ -21,15 +21,17 @@ const render = () => {
 eventHub.addEventListener("click", clickEvent => {
     if(clickEvent.target.id === "dailyTask--saveTask") {
         
-
+        
         const taskText = document.querySelector("#dailyTask--task").value
         const taskTitle = document.querySelector("#dailyTask--taskName").value
         const dateOfCompletition = document.querySelector("#dailyTask--dateOfCompletition").value
+        const activeUser = parseInt(sessionStorage.getItem("activeUser"))
 
     const taskToSave = {
-        taskText,
         taskTitle,
-        dateOfCompletition
+        taskText,
+        dateOfCompletition,
+        activeUser
     }
 
         saveTask(taskToSave)

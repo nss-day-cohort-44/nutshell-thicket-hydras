@@ -19,7 +19,10 @@ export const getEvents = () => {
     .then (
         parsedEvents => {
             // console.log(parsedEvents)
-            events = parsedEvents
+            events = parsedEvents.filter(ue => {
+                return ue.activeUser === parseInt(sessionStorage.getItem("activeUser"))
+
+            })
         })
 }
 export const deleteEvent = eventId => {
