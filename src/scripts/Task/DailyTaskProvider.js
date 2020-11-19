@@ -14,7 +14,7 @@ let tasks = []
 // Getting all Tasks here 
 
 export const getTask = userId => {
-    return fetch('http://localhost:8088/tasks?tasksId=${userId}')
+    return fetch(`http://localhost:8088/tasks?tasksId=${userId}`)
     .then(response => response.json())
     .then(parsedTasks => {
         tasks = parsedTasks
@@ -36,7 +36,7 @@ export const deleteTask = taskId => {
         .then(getTask)
 }
 
-export const saveTask = () => {
+export const saveTask = (tasks) => {
 
     return fetch('http://localhost:8088/tasks', {
         method: "POST",

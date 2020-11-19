@@ -11,7 +11,7 @@ export const DailyTaskHTML = (taskObj) => {
     <p> Completion Date: ${taskObj.dateOfCompletition}</p>
     <p>Completed?<input class="completeBox" type = "checkbox" </input>
     <button id="deleteTask--${taskObj.id}">Delete</button>
-    `
+    </div>`
 }
 
 
