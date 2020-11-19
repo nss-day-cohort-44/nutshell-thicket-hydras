@@ -6,7 +6,7 @@ button,
 input,
 select,
 textarea {
-	background-color: lightseagreen;
+	background-color: darkgoldenrod;
 	color: #404040;
 	font-family: "Comfortaa", Arial, sans-serif;
 	font-size: 14px;
@@ -34,10 +34,12 @@ img{
     display: flex;
 }
 .auth--login{
+    background-color: lightblue;
     flex: 3;
     flex-direction: column;
 }
 .auth--register{
+    background-color: lightblue;
     flex: 3;
     flex-direction: column;
 }
@@ -51,8 +53,10 @@ img{
 }
 
 .dailyTaskContainer {
+    background-color: lightblue;
     
     display: flex;
+    flex: 2;
     flex-direction: column;
 }
 
@@ -72,14 +76,19 @@ img{
 .topLeftContainer{
     display: flex;
 }
-.dailyTaskContainer{
+.eventsContainer{
+    background-color: lightblue;
     flex: 2;
 }
-.eventsContainer{
-    flex: 2;
+.newsArticleContainer{
+    flex: center;
+    background-color: lightblue;
+}
+.rightContainer{
+    background-color: lightblue
 }
 .friendsContainer{
-    flex: 1;
+    flex: 3;
 }
 .chatContainer{
     flex: 1;
