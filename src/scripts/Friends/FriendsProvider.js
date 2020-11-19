@@ -8,19 +8,19 @@ const dispatchStateChangeEvent = () => {
 }
 
 let friends = ""
-const activeUser = parseInt(sessionStorage.getItem("activeUser"))
+
 
 export const useFriends = () => {
     return friends.slice()
 }
 
-export const getFriends = (activeUserId) => {
+export const getFriends = () => {
 
-    return fetch(`http://localhost:8088/friends?friendsId=${activeUserId}`)
+    return fetch(`http://localhost:8088/friends`)
         .then(response => response.json())
         .then(parsedFriends => {
             friends = parsedFriends.filter(uf => {
-                return uf.activeUser === parseInt(sessionStorage.getItem("activeUser"))
+                return uf.userId === parseInt(sessionStorage.getItem("activeUser"))
 
             }
             )
@@ -30,6 +30,21 @@ export const getFriends = (activeUserId) => {
 
 }
 
+export const getByFriendId = (friendsId) => {
+    const activeUser = parseInt(sessionStorage.getItem("activeUser"))
+    
+    return fetch(`http://localhost:8088/friends?userFriend=${friendsId}&userId=${activeUser}`)
+        .then(response => response.json())
+        .then(parsedFriends => {
+            return parsedFriends[0]
+
+            
+            
+            // console.log("friends filtered" , friends)
+        })
+        
+
+}
 
 
 // Where is any of this coming from?
@@ -46,8 +61,8 @@ export const saveFriend = friend => {
     
 }
 
-export const deleteFriend = friendId => { 
-    return fetch(`http://localhost:8088/friends/${friendId}`,{
+export const deleteFriend = id => { 
+    return fetch(`http://localhost:8088/friends/${id}`,{
         method: "DELETE"
     })
     .then(getFriends)
