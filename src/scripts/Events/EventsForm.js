@@ -23,11 +23,12 @@ eventHub.addEventListener("click", clickEvent =>{
         const nameOfEvent = document.querySelector("#event--name").value
         const dateOfEvent = document.querySelector("#event--date").value
         const locationOfEvent = document.querySelector("#event--location").value
-
+        const activeUser = parseInt(sessionStorage.getItem("activeUser"))
         const newEvent = {
             nameOfEvent,
             dateOfEvent,
-            locationOfEvent
+            locationOfEvent,
+            activeUser
         }
         saveEvent(newEvent)
     }
