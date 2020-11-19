@@ -1,6 +1,4 @@
 
-
-
 export const FriendHTML = (newFriend) => {
     return `
 

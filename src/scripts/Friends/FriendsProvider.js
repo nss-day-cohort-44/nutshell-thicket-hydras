@@ -8,17 +8,25 @@ const dispatchStateChangeEvent = () => {
 }
 
 let friends = ""
+const activeUser = parseInt(sessionStorage.getItem("activeUser"))
 
 export const useFriends = () => {
     return friends.slice()
 }
 
-export const getFriends = () => {
-    return fetch('http://localhost:8088/friends')
+export const getFriends = (activeUserId) => {
+
+    return fetch(`http://localhost:8088/friends?friendsId=${activeUserId}`)
         .then(response => response.json())
         .then(parsedFriends => {
-            friends = parsedFriends
+            friends = parsedFriends.filter(uf => {
+                return uf.activeUser === parseInt(sessionStorage.getItem("activeUser"))
+
+            }
+            )
+            // console.log("friends filtered" , friends)
         })
+        
 
 }
 
