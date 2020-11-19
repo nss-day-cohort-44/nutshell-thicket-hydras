@@ -54,8 +54,8 @@ const addFriend = () => {
     getUsers()
     .then(() => {
         
-        const activeUser = parseInt(sessionStorage.getItem("activeUser"))
-        console.log("This is active user ", activeUser)
+        const userId = parseInt(sessionStorage.getItem("activeUser"))
+       
         
         const userArray = useUsers()
         // console.log("USERARRAY" , userArray)
@@ -71,12 +71,15 @@ const addFriend = () => {
             
             
             const catchFriendObj = {
-                activeUser,
-                friendId: newFriend.id
+                userId,
+                userFriend: newFriend.id
             }
+            if (userId === newFriend.id) {
+                alert("Try making some friends")
+            } else {
             console.log(catchFriendObj)
             saveFriend(catchFriendObj)
-            
+            }  
         })
     }
     
