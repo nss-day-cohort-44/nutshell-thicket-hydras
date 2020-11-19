@@ -1,9 +1,10 @@
 
 
 
-export const FriendHTML = (activeUser, newFriend) => {
+export const FriendHTML = (newFriend) => {
     return `
-        <div> 
+        <div class="friendsHTML">
+        <div class="friendName"> ${newFriend.username}</div>
         
         </div>
     `
