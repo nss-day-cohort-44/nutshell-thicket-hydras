@@ -19,7 +19,9 @@ export const getArticle = () => {
     .then (
         parsedArticles => {
             // console.log(parsedEvents)
-            articles = parsedArticles
+            articles = parsedArticles.filter(ua => {
+                return ua.activeUser === parseInt(sessionStorage.getItem("activeUser"))
+            })
         })
 }
 export const deleteArticle = articleId => {
