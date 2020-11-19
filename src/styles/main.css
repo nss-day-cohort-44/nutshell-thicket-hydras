@@ -34,10 +34,12 @@ img{
     display: flex;
 }
 .auth--login{
+    background-color: lightblue;
     flex: 3;
     flex-direction: column;
 }
 .auth--register{
+    background-color: lightblue;
     flex: 3;
     flex-direction: column;
 }
