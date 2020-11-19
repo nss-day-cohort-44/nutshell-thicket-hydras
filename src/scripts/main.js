@@ -7,6 +7,7 @@ import { DailyTaskList } from "./Task/DailyTaskList.js"
 import { getTask } from "./Task/DailyTaskProvider.js"
 import { renderTaskButton } from "./Task/DisplayNewTaskButton.js"
 import { useUsers , getUsers } from "./UserProvider.js"
+import { FriendList } from "./Friends/FriendsList.js"
 
 
 
@@ -27,7 +28,7 @@ eventHub.addEventListener("userAuthenticated", () => Nutshell())
 
 getUsers()
 useUsers()
-
+FriendList()
 
 // if (sessionStorage.getItem === "activeUser", user.id) {
 //     Nutshell()
