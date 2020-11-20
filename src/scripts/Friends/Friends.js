@@ -1,4 +1,6 @@
 
+// HTML representation for each friend called in FriendsList.js
+
 export const FriendHTML = (newFriend) => {
     // console.log("newFriend" , newFriend.id)
     return `
