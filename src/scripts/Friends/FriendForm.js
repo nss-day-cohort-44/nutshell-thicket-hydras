@@ -30,7 +30,7 @@ eventHub.addEventListener("click", event => {
     }
 }
 )
-// Adds other users to active user friend list  
+// Adds other users to active user friend list by invoking addFriend()  
 
 eventHub.addEventListener("click", event => {
     if (event.target.id === "saveFriend") {
@@ -40,15 +40,10 @@ addFriend()
     }
 })
 
+// console.log("userArray" , userArray
 
-
-
-
-
-// console.log("userArray" , userArray)
-
-
-
+//Finds the friend by username and matches to the activeUser user that is entered in DOM then sends object to friends db. 
+// This is invoked in the saveFriend click event
 const addFriend = () => {
     
     getUsers()
@@ -56,19 +51,17 @@ const addFriend = () => {
         
         const userId = parseInt(sessionStorage.getItem("activeUser"))
        
-        
+    
         const userArray = useUsers()
         // console.log("USERARRAY" , userArray)
+
             const newFriend = userArray.find(user => {
                 return user.username === document.getElementById("friendsList--friendName").value
                 
                 
             })
             
-            console.log("NEW FRIEND", newFriend)
-
-            
-            
+            console.log("NEW FRIEND", newFriend)   
             
             const catchFriendObj = {
                 userId,
@@ -82,6 +75,3 @@ const addFriend = () => {
             }  
         })
     }
-    
-    
-    // addFriend()

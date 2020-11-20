@@ -8,6 +8,7 @@ import { getUsers , useUsers } from "../UserProvider.js"
 const contentTarget = document.querySelector(".friendsList")
 const eventHub = document.querySelector(".container")
 
+
 eventHub.addEventListener("friendStateChanged", () => FriendList())
 
 
@@ -15,7 +16,8 @@ const activeUser = parseInt(sessionStorage.getItem("activeUser"))
 
 
 
-
+// Returns rendered friend to the DOM by mapping through friends array
+// and finding correpsonding user id
 
 export const FriendList = () => {
     getFriends()
@@ -36,9 +38,9 @@ export const FriendList = () => {
             return friendObj
         })
 
-        // friendObjId = users.map(user => { 
-        //     const friendID =  
-        // })
+// HTML Representation of each friend into the Friends List container
+    
+
         // console.log("friendHTMLRep" , friendHTMLRepresentations)
         contentTarget.innerHTML =
         `<h3>Friends List</h3>
@@ -54,26 +56,23 @@ export const FriendList = () => {
 
 }
 
+// Click event on "delete button" that deletes friend from list and json
+
 eventHub.addEventListener("click", clickEvent => {
     if (clickEvent.target.id.startsWith("deleteFriend--")) {
         const [prefix, friendId] = clickEvent.target.id.split("--")
         // console.log("friendId" , friendId)
-        /*
-            Invoke the function that performs the delete operation.
 
-            Once the operation is complete you should THEN invoke
-            useEvents() and render the Event list again.
-        */
        const friendIntId = parseInt(friendId)
 
-       
-    //    console.log("friendIntId" , friendIntId)
+
+// Invoke the function that performs the delete operation.  
+//    console.log("friendIntId" , friendIntId)
     getByFriendId(friendIntId)
     .then(
         (relationshipObject) => {
        deleteFriend(relationshipObject.id).then(
            () => {
-            //    const updatedFriends = useFriends()
                FriendList()
            }
        )

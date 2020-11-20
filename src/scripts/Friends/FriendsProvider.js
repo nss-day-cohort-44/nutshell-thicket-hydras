@@ -1,5 +1,6 @@
 const eventHub = document.querySelector(".container")
 
+// 
 const dispatchStateChangeEvent = () => {
     const friendStateChangedEvent = new CustomEvent("friendStateChanged")
 
@@ -14,11 +15,14 @@ export const useFriends = () => {
     return friends.slice()
 }
 
+// Gets all friends string from db and convert to json. Exports to FriendsList  
 export const getFriends = () => {
 
     return fetch(`http://localhost:8088/friends`)
         .then(response => response.json())
         .then(parsedFriends => {
+// Filters through friends array and filters just those related to active user
+
             friends = parsedFriends.filter(uf => {
                 return uf.userId === parseInt(sessionStorage.getItem("activeUser"))
 
@@ -30,6 +34,7 @@ export const getFriends = () => {
 
 }
 
+// 
 export const getByFriendId = (friendsId) => {
     const activeUser = parseInt(sessionStorage.getItem("activeUser"))
     
@@ -47,7 +52,7 @@ export const getByFriendId = (friendsId) => {
 }
 
 
-// Where is any of this coming from?
+// Saves friend object that is added in FriendsForm to database.json
 export const saveFriend = friend => {
     return fetch('http://localhost:8088/friends', {
         method: "POST",
@@ -61,6 +66,7 @@ export const saveFriend = friend => {
     
 }
 
+// Deletes friends from Friend List by targeting the friends.id
 export const deleteFriend = id => { 
     return fetch(`http://localhost:8088/friends/${id}`,{
         method: "DELETE"
